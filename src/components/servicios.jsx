@@ -4,7 +4,7 @@ import axios from "axios";
 function Servicios () {
     const [servicios, setServicios] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:8080/servicio").then((response)=>{
+        axios.get("https://api-doctor-agil.onrender.com/servicio").then((response)=>{
             setServicios(response.data)
         })
     }, []);
