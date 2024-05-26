@@ -1324,15 +1324,17 @@ function Search() {
 
     const searchUser = async (e) => {
         e.preventDefault();
-        let newUrl = 'https://api-doctor-agil.onrender.com/servicio';
-
+        let newUrl = '';
         if (cityRef !== '') {
-            newUrl = `https://api-doctor-agil.onrender.com/servicio/city/${cityRef}`;
+            newUrl = `https://api-doctor-agil.onrender.com/servicio/city-tittle/${cityRef}/${idUser.current.value}`;
         } else if (departamentRef !== '') {
-            newUrl = `https://api-doctor-agil.onrender.com/servicio/department/${departamentRef}`;
+            newUrl = `https://api-doctor-agil.onrender.com/servicio/department-tittle/${departamentRef}/${idUser.current.value}`;
         }
-
+        console.log("URL:", newUrl);
         setUrl(newUrl);
+        axios.get(url).then((response)=>{
+            setUser(response.data)
+        })
     };
 
     const handleCardClick = (service) => {
