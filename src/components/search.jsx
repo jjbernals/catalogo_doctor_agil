@@ -1314,7 +1314,7 @@ function Search() {
     const [departamentRef, setDepartament] = useState('');
     const [cityRef, setCityRef] = useState('');
     const [selectedService, setSelectedService] = useState(null);
-    const [url, setUrl] = useState('http://localhost:8080/servicio');
+    const [url, setUrl] = useState('https://api-doctor-agil.onrender.com/servicio');
 
     useEffect(() => {
         axios.get(url).then((response) => {
@@ -1324,12 +1324,12 @@ function Search() {
 
     const searchUser = async (e) => {
         e.preventDefault();
-        let newUrl = 'http://localhost:8080/servicio';
+        let newUrl = 'https://api-doctor-agil.onrender.com/servicio';
 
         if (cityRef !== '') {
-            newUrl = `http://localhost:8080/servicio/city/${cityRef}`;
+            newUrl = `https://api-doctor-agil.onrender.com/servicio/city/${cityRef}`;
         } else if (departamentRef !== '') {
-            newUrl = `http://localhost:8080/servicio/department/${departamentRef}`;
+            newUrl = `https://api-doctor-agil.onrender.com/servicio/department/${departamentRef}`;
         }
 
         setUrl(newUrl);
