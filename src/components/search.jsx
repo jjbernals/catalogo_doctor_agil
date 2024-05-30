@@ -1330,6 +1330,9 @@ function Search() {
         } else if (departamentRef !== '') {
             newUrl = `https://api-doctor-agil.onrender.com/servicio/department-tittle/${departamentRef}/${idUser.current.value}`;
         }
+        else{
+            newUrl = `https://api-doctor-agil.onrender.com/servicio/tittle/${idUser.current.value}`;
+        }
         console.log("URL:", newUrl);
         setUrl(newUrl);
         axios.get(url).then((response)=>{
